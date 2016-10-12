@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class InventoryDbHelper extends SQLiteOpenHelper{
 
+
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Inventory.db";
 
@@ -14,7 +15,7 @@ public class InventoryDbHelper extends SQLiteOpenHelper{
             "CREATE TABLE " + InventoryContract.Inventory.TABLE_NAME + " (" +
                     InventoryContract.Inventory._ID + " INTEGER PRIMARY KEY," +
                     InventoryContract.Inventory.COLUMN_NAME_NAME + " TEXT," +
-                    InventoryContract.Inventory.COLUMN_NAME_PRICE + "INTEGER" + " )";
+                    InventoryContract.Inventory.COLUMN_NAME_PRICE + " INTEGER ][;" + " );";
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + InventoryContract.Inventory.TABLE_NAME;
