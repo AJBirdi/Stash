@@ -17,4 +17,8 @@
         </activity>
     </application>
 
+    <!--
+    <permission android:name="com.angadjotbirdi.PERMISSION" />
+    -->
+
 </manifest>
