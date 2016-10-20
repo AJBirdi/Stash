@@ -10,8 +10,6 @@ import android.support.annotation.Nullable;
  * Created by root on 10/12/16.
  */
 
-//TODO: Implement Content Provider methods
-
 
 public class InventoryProvider extends ContentProvider{
 

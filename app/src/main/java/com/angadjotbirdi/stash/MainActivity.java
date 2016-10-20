@@ -1,59 +1,25 @@
 package com.angadjotbirdi.stash;
 
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Main Activity" ;
+    public static final String EXTRA_MESSAGE = "com.angadjotbirdi.stash.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        InventoryDbHelper mDbHelper = new InventoryDbHelper(this);
-        SQLiteDatabase writeDb = mDbHelper.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-
-        values.put(InventoryContract.Inventory.COLUMN_NAME_NAME, "My Title");
-        values.put(InventoryContract.Inventory.COLUMN_NAME_PRICE, "50");
-
-        long newRowID = writeDb.insert(InventoryContract.Inventory.TABLE_NAME, null, values);
-
-        SQLiteDatabase readDb = mDbHelper.getReadableDatabase();
-
-        String[] projection = {
-                InventoryContract.Inventory._ID,
-                InventoryContract.Inventory.COLUMN_NAME_NAME,
-                InventoryContract.Inventory.COLUMN_NAME_PRICE
-        };
-
-        String selection = InventoryContract.Inventory.COLUMN_NAME_NAME + " = ?";
-        String[] selectionArgs = {"My Title"};
-
-        String sortOrder = InventoryContract.Inventory.COLUMN_NAME_PRICE + " DESC";
-
-        Cursor c = readDb.query(
-                InventoryContract.Inventory.TABLE_NAME,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null
-        );
-
-        String[] columnNames = c.getColumnNames();
-
-        for(int x = 0; x < c.getColumnCount(); x++){
-            Log.d(TAG, columnNames[x]);
-        }
-
+    public void editItems(View view){
+        Intent intent = new Intent(this, ItemViewActivity.class);
+        String message = "I made it!";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
