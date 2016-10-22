@@ -6,9 +6,15 @@ import android.database.ContentObservable;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.math.BigDecimal;
+import java.security.SecureRandom;
 
 public class InventoryDbHelper extends SQLiteOpenHelper{
 
+
+    private final static String TAG = "InventoryDBHelper";
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Inventory.db";
@@ -17,7 +23,7 @@ public class InventoryDbHelper extends SQLiteOpenHelper{
             "CREATE TABLE " + InventoryContract.Inventory.TABLE_NAME + " (" +
                     InventoryContract.Inventory._ID + " INTEGER PRIMARY KEY," +
                     InventoryContract.Inventory.COLUMN_NAME_NAME + " TEXT," +
-                    InventoryContract.Inventory.COLUMN_NAME_PRICE + " INTEGER ][;" + " );";
+                    InventoryContract.Inventory.COLUMN_NAME_PRICE + " INT" + " );";
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + InventoryContract.Inventory.TABLE_NAME;
@@ -85,6 +91,32 @@ public class InventoryDbHelper extends SQLiteOpenHelper{
                 InventoryContract.Inventory._ID + " = ? ",
                 new String[] {Integer.toString(id)});
     }
+
+    /*public void populateDatabase(int itemCount){
+
+        String name;
+        BigDecimal price;
+
+        SecureRandom myRandom = new SecureRandom();
+
+        for(int x = 1; x <= itemCount; x++){
+            int rawPrice = myRandom.nextInt(10000);
+
+            price = new BigDecimal(rawPrice).movePointLeft(2);
+            //price = price.movePointLeft(2);
+
+            //price = price.valueOf(rawPrice).movePointToLeft(2);
+
+            name = "item" + x;
+
+            insertItem(name, );
+
+            Log.d(TAG, name);
+            Log.d(TAG, price + "");
+        }
+
+    }
+    */
 
 
 }

@@ -66,24 +66,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_d362869ca066bd2c137043db43c10011b840b74e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.0_6908be4db0adf3e41b502e37a5a5aec772c31937/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -93,39 +75,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="7fffd89e723de1680d6eb09b07038486d6e6ab8e">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e3671e3b8e4ace2d13b90a4d1c9fbc536d6238ba/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.0_6e79f63f22b8219906a0039626b26c1700a815d6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
         <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.0_d303e1baf14b378af705fa25c95c82719ddf291b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="3dfa3f15ec53f398eebd1e210edf7fc5f374c72b">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e8d02748a69104eeb96a4e373ba820e9e888b444/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -153,6 +108,51 @@
         revision="24.0.1"
         sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
         <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.0_983fe2500a9bb121d3d7e49603881656cfc1bc6b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_d362869ca066bd2c137043db43c10011b840b74e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.0_6908be4db0adf3e41b502e37a5a5aec772c31937/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9f02fb8183304d0973709bf4d8fa3e974e59d112">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e3671e3b8e4ace2d13b90a4d1c9fbc536d6238ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.0_6e79f63f22b8219906a0039626b26c1700a815d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="077a19e37780c3a2df586be7dfa677d9a162557b">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e8d02748a69104eeb96a4e373ba820e9e888b444/classes.dex" />
     </item>
 
 </items>
