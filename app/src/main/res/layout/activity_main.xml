@@ -11,7 +11,7 @@
 
     <!--TODO: Remove onClick property and use anonymous inner class -->
     <Button
-        android:id="@+id/editItemsButton"
+        android:id="@+id/edit_items_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
