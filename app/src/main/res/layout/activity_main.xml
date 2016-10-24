@@ -9,12 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.angadjotbirdi.stash.MainActivity">
 
-    <!--<TextViewTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-        -->
-
+    <!--TODO: Remove onClick property and use anonymous inner class -->
     <Button
         android:id="@+id/editItemsButton"
         android:layout_width="wrap_content"

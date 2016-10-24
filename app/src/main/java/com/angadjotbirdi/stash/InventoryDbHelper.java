@@ -70,18 +70,14 @@ public class InventoryDbHelper extends SQLiteOpenHelper{
     public Cursor getItem(int id){
         SQLiteDatabase read_db = getReadableDatabase();
 
-        Cursor singleItem = read_db.rawQuery("SELECT * FROM " + InventoryContract.Inventory.TABLE_NAME + " WHERE" + InventoryContract.Inventory._ID + "=?",
+        return read_db.rawQuery("SELECT * FROM " + InventoryContract.Inventory.TABLE_NAME + " WHERE" + InventoryContract.Inventory._ID + "=?",
                 new String[] {Integer.toString(id)});
-
-        return singleItem;
     }
 
     public Cursor getAllItems(){
         SQLiteDatabase read_db = getReadableDatabase();
 
-        Cursor allItems = read_db.rawQuery("SELECT * FROM " + InventoryContract.Inventory.TABLE_NAME, null);
-
-        return allItems;
+        return read_db.rawQuery("SELECT * FROM " + InventoryContract.Inventory.TABLE_NAME, null);
     }
 
     public Integer deleteItem(Integer id){
@@ -91,32 +87,4 @@ public class InventoryDbHelper extends SQLiteOpenHelper{
                 InventoryContract.Inventory._ID + " = ? ",
                 new String[] {Integer.toString(id)});
     }
-
-    /*public void populateDatabase(int itemCount){
-
-        String name;
-        BigDecimal price;
-
-        SecureRandom myRandom = new SecureRandom();
-
-        for(int x = 1; x <= itemCount; x++){
-            int rawPrice = myRandom.nextInt(10000);
-
-            price = new BigDecimal(rawPrice).movePointLeft(2);
-            //price = price.movePointLeft(2);
-
-            //price = price.valueOf(rawPrice).movePointToLeft(2);
-
-            name = "item" + x;
-
-            insertItem(name, );
-
-            Log.d(TAG, name);
-            Log.d(TAG, price + "");
-        }
-
-    }
-    */
-
-
 }

@@ -8,30 +8,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.angadjotbirdi.stash.ItemViewActivity">
+    tools:context="com.angadjotbirdi.stash.ItemActivity">
 
-    <android.support.v7.widget.RecyclerView>
-
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/itemRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
     </android.support.v7.widget.RecyclerView>
-
-    <Button
-        android:id="@+id/addItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ADD ITEM"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="41dp"
-        android:layout_marginBottom="62dp" />
-
-    <Button
-        android:id="@+id/deleteItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DELETE ITEM"
-        android:layout_alignBaseline="@+id/addItem"
-        android:layout_alignBottom="@+id/addItem"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="30dp" />
 
 </RelativeLayout>

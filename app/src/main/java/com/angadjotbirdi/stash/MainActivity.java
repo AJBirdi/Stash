@@ -17,16 +17,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //TODO: Switch edit button from onClick attribute to anonymous inner class
+
         populateDatabase(5000);
     }
 
     public void editItems(View view){
-        Intent intent = new Intent(this, ItemViewActivity.class);
+        Intent intent = new Intent(this, ItemActivity.class);
         startActivity(intent);
     }
 
      public void populateDatabase(int itemCount){
-
          InventoryDbHelper dbHelper = new InventoryDbHelper(getApplicationContext());
          SQLiteDatabase db = dbHelper.getWritableDatabase();
 

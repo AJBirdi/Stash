@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Stash</string>
+
     <string name="editItems">Edit items</string>
+
+    <string name="item_price_hint">Enter a price for the item.</string>
+    <string name="item_name_hint">Enter a name for the item.</string>
+
+    <string name="item_name_label">Name</string>
+    <string name="item_price_label">Price</string>
+
+    <string name="item_save_button">Save</string>
 </resources>
