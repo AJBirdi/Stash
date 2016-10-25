@@ -9,12 +9,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.angadjotbirdi.stash.MainActivity">
 
-    <!--TODO: Remove onClick property and use anonymous inner class -->
     <Button
         android:id="@+id/edit_items_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/editItems"
-        android:onClick="editItems"/>
+        android:text="@string/editItems" />
+
+    <Button
+        android:id="@+id/view_items_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_items"
+        android:layout_below="@+id/edit_items_button"
+        android:layout_alignStart="@+id/edit_items_button" />
 </RelativeLayout>

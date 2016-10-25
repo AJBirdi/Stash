@@ -42,12 +42,25 @@ public class ItemListFragment extends Fragment {
 
     private class ItemHolder extends RecyclerView.ViewHolder{
 
-        public TextView nameTextView;
+        private TextView nameTextView;
+        private TextView priceTextView;
+
+        private Item item;
+
+        public void bindItem(Item item){
+            this.item = item;
+
+            String priceText = item.getPrice() + "";
+
+            nameTextView.setText(item.getName());
+            priceTextView.setText(priceText);
+        }
 
         public ItemHolder(View itemView){
             super(itemView);
 
-            nameTextView = (TextView) itemView;
+            nameTextView = (TextView) itemView.findViewById(R.id.item_name_text_view);
+            priceTextView = (TextView) itemView.findViewById(R.id.item_price_text_view);
         }
     }
 
@@ -63,7 +76,7 @@ public class ItemListFragment extends Fragment {
         public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
 
-            View view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+            View view = layoutInflater.inflate(R.layout.list_item_item, parent, false);
 
             return new ItemHolder(view);
         }
@@ -71,7 +84,7 @@ public class ItemListFragment extends Fragment {
         @Override
         public void onBindViewHolder(ItemHolder holder, int position) {
             Item item = items.get(position);
-            holder.nameTextView.setText(item.getName());
+            holder.bindItem(item);
         }
 
         @Override

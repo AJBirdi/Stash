@@ -13,6 +13,7 @@ import java.util.List;
 public class ItemLab{
 
     private static ItemLab itemLab;
+    private List<Item> items;
 
     private SQLiteDatabase db;
 
@@ -24,16 +25,27 @@ public class ItemLab{
     }
 
     private ItemLab(Context context){
-        db = new InventoryDbHelper(context.getApplicationContext()).getWritableDatabase();
+        //db = new InventoryDbHelper(context.getApplicationContext()).getWritableDatabase();
+
+        items = new ArrayList<>();
+        for (int i = 0; i < 100; i++){
+            Item item = new Item();
+            item.setName("Item # " + i);
+            item.setPrice(i);
+            items.add(item);
+        }
     }
 
     public List<Item> getItems(){
-        return new ArrayList<>();
+        return items;
     }
 
-    public Item getItem(int id){
+    public Item getItem(String name){
+        for(Item item : items){
+            if(item.getName().equals(name)){
+                return item;
+            }
+        }
         return null;
     }
-
-
 }
