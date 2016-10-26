@@ -10,17 +10,10 @@
     tools:context="com.angadjotbirdi.stash.MainActivity">
 
     <Button
-        android:id="@+id/edit_items_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/editItems" />
-
-    <Button
         android:id="@+id/view_items_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/view_items"
-        android:layout_below="@+id/edit_items_button"
-        android:layout_alignStart="@+id/edit_items_button" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

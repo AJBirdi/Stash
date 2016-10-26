@@ -32,6 +32,7 @@ public class ItemLab{
             Item item = new Item();
             item.setName("Item # " + i);
             item.setPrice(i);
+            item.setId(i * 5);
             items.add(item);
         }
     }
@@ -40,9 +41,9 @@ public class ItemLab{
         return items;
     }
 
-    public Item getItem(String name){
+    public Item getItem(int id){
         for(Item item : items){
-            if(item.getName().equals(name)){
+            if(item.getId() == (id)){
                 return item;
             }
         }

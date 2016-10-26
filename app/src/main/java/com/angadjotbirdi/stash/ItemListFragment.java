@@ -1,5 +1,6 @@
 package com.angadjotbirdi.stash;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +18,8 @@ import java.util.List;
 
 public class ItemListFragment extends Fragment {
 
+    private static final String TAG = "ItemListFragment";
+
     private RecyclerView itemRecyclerView;
     private ItemAdapter itemAdapter;
 
@@ -32,25 +35,45 @@ public class ItemListFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateUI();
+    }
+
     private void updateUI(){
         ItemLab itemLab = ItemLab.get(getActivity());
         List<Item> items = itemLab.getItems();
 
-        itemAdapter = new ItemAdapter(items);
-        itemRecyclerView.setAdapter(itemAdapter);
+        if(itemAdapter == null){
+            itemAdapter = new ItemAdapter(items);
+            itemRecyclerView.setAdapter(itemAdapter);
+        }
+        else {
+            itemAdapter.notifyDataSetChanged();
+        }
+
     }
 
-    private class ItemHolder extends RecyclerView.ViewHolder{
+    private class ItemHolder extends RecyclerView.ViewHolder
+        implements View.OnClickListener {
 
         private TextView nameTextView;
         private TextView priceTextView;
+        private TextView idTextView;
 
         private Item item;
+
+        @Override
+        public void onClick(View v){
+            Intent intent = ItemActivity.newIntent(getActivity(), item.getId());
+            startActivity(intent);
+        }
 
         public void bindItem(Item item){
             this.item = item;
 
-            String priceText = item.getPrice() + "";
+            String priceText = "Price :: " + item.getPrice();
 
             nameTextView.setText(item.getName());
             priceTextView.setText(priceText);
@@ -58,6 +81,7 @@ public class ItemListFragment extends Fragment {
 
         public ItemHolder(View itemView){
             super(itemView);
+            itemView.setOnClickListener(this);
 
             nameTextView = (TextView) itemView.findViewById(R.id.item_name_text_view);
             priceTextView = (TextView) itemView.findViewById(R.id.item_price_text_view);

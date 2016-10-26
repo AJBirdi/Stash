@@ -48,33 +48,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d6ef7a2a6e76443cbb57a7d64fe83712e1a088f9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_e0ecb28f4019ba5fd2024afb8eb308f87f9ed4e2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_61d9960f19bf4e86ea8219f28973705ad094364a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -111,6 +84,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d6ef7a2a6e76443cbb57a7d64fe83712e1a088f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_e0ecb28f4019ba5fd2024afb8eb308f87f9ed4e2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -124,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="64c16267ac315d688533bde912fd2e71198488fd">
+        sha1="61497efb381545814db35649cd3e64cbfabcd439">
         <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e3671e3b8e4ace2d13b90a4d1c9fbc536d6238ba/classes.dex" />
     </item>
     <item
@@ -151,8 +142,17 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="2785cc121bd150b6b8110545f71a29cee46c5cfa">
+        sha1="072a6a418eb2bd2d42d5d3ef5b247f11ccfe9c60">
         <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e8d02748a69104eeb96a4e373ba820e9e888b444/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_61d9960f19bf4e86ea8219f28973705ad094364a/classes.dex" />
     </item>
     <item
         is-multidex="true"

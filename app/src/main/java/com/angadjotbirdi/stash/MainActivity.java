@@ -18,15 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button editButton = (Button)findViewById(R.id.edit_items_button);
-        editButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ItemViewActivity.class);
-                startActivity(intent);
-            }
-        });
-
         Button viewButton = (Button)findViewById(R.id.view_items_button);
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,6 +10,13 @@ public class Item {
     private int price;
     private String name;
 
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
 
     public int getPrice() {
         return price;
