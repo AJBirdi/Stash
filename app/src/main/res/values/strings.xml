@@ -11,4 +11,6 @@
     <string name="item_price_label">Price</string>
 
     <string name="item_save_button">Save</string>
+
+    <string name="new_item">New Item</string>
 </resources>

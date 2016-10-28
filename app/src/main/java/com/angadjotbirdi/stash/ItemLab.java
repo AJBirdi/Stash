@@ -2,6 +2,7 @@ package com.angadjotbirdi.stash;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.List;
  */
 
 public class ItemLab{
+
+    private static final String TAG = "ItemLab";
 
     private static ItemLab itemLab;
     private List<Item> items;
@@ -28,13 +31,23 @@ public class ItemLab{
         //db = new InventoryDbHelper(context.getApplicationContext()).getWritableDatabase();
 
         items = new ArrayList<>();
-        for (int i = 0; i < 100; i++){
-            Item item = new Item();
-            item.setName("Item # " + i);
-            item.setPrice(i);
-            item.setId(i * 5);
+    }
+
+    public void addItem(Item item){
+
+        Log.d(TAG, "Beginning of add method");
+
+        String nameTest = item.getName();
+
+        if(nameTest != null) {
             items.add(item);
+            Log.d(TAG, "I added an item");
         }
+        else if(nameTest == null){
+            Log.d(TAG, "I'm null");
+        }
+        Log.d(TAG, "End of add method");
+
     }
 
     public List<Item> getItems(){

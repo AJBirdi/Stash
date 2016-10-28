@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,18 +15,23 @@ import android.widget.EditText;
  * Created by root on 10/24/16.
  */
 
+//TODO: Fix bug where null and empty items are being saved and non-null items are not being saved
+
 public class ItemFragment extends Fragment {
 
     private static final String ARG_ITEM_ID = "item_id";
     private static final String TAG = "ItemFragment";
 
     private Item item;
+
     private EditText nameTextField;
     private EditText priceTextField;
     private Button saveButton;
 
     private String tempName;
     private String tempPrice;
+    private String nameText;
+    private String priceText;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -39,17 +45,31 @@ public class ItemFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_item, container, false);
 
+        //tempName = item.getName();
+        //tempPrice = item.getPrice() + "";
+
+        if(item == null){
+            item = new Item();
+            nameText = "";
+            priceText = "";
+            Log.d(TAG, "IT worked!");
+        }
+        else if(item != null){
+            nameText = item.getName();
+            priceText = item.getPrice() + "";
+        }
+
         nameTextField = (EditText)v.findViewById(R.id.item_name);
-        nameTextField.setText(item.getName());
+        nameTextField.setText(nameText);
         nameTextField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                tempName = s.toString();
+                //nameText = s.toString();
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                tempName = s.toString();
+                nameText = s.toString();
             }
 
             @Override
@@ -59,18 +79,16 @@ public class ItemFragment extends Fragment {
         });
 
         priceTextField = (EditText)v.findViewById(R.id.item_price);
-        String priceText = item.getPrice() + "";
         priceTextField.setText(priceText);
-
         priceTextField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                tempPrice = s.toString();
+                //priceText= s.toString();
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                tempPrice = s.toString();
+                priceText = s.toString();
             }
 
             @Override
@@ -79,33 +97,30 @@ public class ItemFragment extends Fragment {
             }
         });
 
-        //Set the tempName and tempPrice to the text that is displayed when the view is created
-        //so if the user presses the save button without entering anything, it won't cause a
-        //null pointer exception
-        tempName = item.getName();
-        tempPrice = item.getPrice() + "";
+
 
         saveButton = (Button)v.findViewById(R.id.save_button);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tempName.equals("")){
+                if (nameText.equals("") || nameText == null){
                     //TODO:Use popup window to reprompt user to enter name and reset fields
                 }
 
                 else{
-                    item.setName(tempName);
+                    Log.d(TAG, nameText + " is the name");
+                    item.setName(nameText);
                 }
 
-                if(tempPrice.matches("[0-9]+") || tempPrice.equals("")){
-                    item.setPrice(Integer.parseInt(tempPrice));
+                if(priceText.matches("[0-9]+")){
+                    item.setPrice(Integer.parseInt(priceText));
                 }
 
                 else{
                     //TODO:Use popup window to reprompt user to enter price and reset fields
-
-
                 }
+
+                getActivity().finish();
             }
         });
 

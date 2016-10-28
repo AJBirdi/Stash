@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -24,7 +28,13 @@ public class ItemListFragment extends Fragment {
     private ItemAdapter itemAdapter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_item_view, container, false);
 
         itemRecyclerView = (RecyclerView) view.findViewById(R.id.item_recycler_view);
@@ -36,41 +46,70 @@ public class ItemListFragment extends Fragment {
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         updateUI();
+
     }
 
-    private void updateUI(){
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_item_list, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.menu_item_new_item:
+                Item item = new Item();
+                ItemLab.get(getActivity()).addItem(item);
+                Intent intent = ItemActivity.newIntent(getActivity(), item.getId());
+                startActivity(intent);
+                Log.d(TAG, item.getName() + " " + item.getPrice());
+                return true;
+            default:
+                return super.onOptionsItemSelected(menuItem);
+        }
+    }
+
+    private void updateUI() {
         ItemLab itemLab = ItemLab.get(getActivity());
         List<Item> items = itemLab.getItems();
 
-        if(itemAdapter == null){
+        if (itemAdapter == null) {
             itemAdapter = new ItemAdapter(items);
             itemRecyclerView.setAdapter(itemAdapter);
-        }
-        else {
+        } else {
             itemAdapter.notifyDataSetChanged();
         }
 
     }
 
     private class ItemHolder extends RecyclerView.ViewHolder
-        implements View.OnClickListener {
+            implements View.OnClickListener, View.OnLongClickListener {
 
         private TextView nameTextView;
         private TextView priceTextView;
-        private TextView idTextView;
 
         private Item item;
 
         @Override
-        public void onClick(View v){
+        public void onClick(View v) {
             Intent intent = ItemActivity.newIntent(getActivity(), item.getId());
             startActivity(intent);
         }
 
-        public void bindItem(Item item){
+        @Override
+        public boolean onLongClick(View v) {
+            //TODO: Make popup window that asks if they want to delete
+            Log.d(TAG, "I was long clicked!");
+
+            return true;
+        }
+
+
+        public void bindItem(Item item) {
             this.item = item;
 
             String priceText = "Price :: " + item.getPrice();
@@ -79,7 +118,7 @@ public class ItemListFragment extends Fragment {
             priceTextView.setText(priceText);
         }
 
-        public ItemHolder(View itemView){
+        public ItemHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
 
@@ -88,11 +127,11 @@ public class ItemListFragment extends Fragment {
         }
     }
 
-    private class ItemAdapter extends RecyclerView.Adapter<ItemHolder>{
+    private class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 
         private List<Item> items;
 
-        public ItemAdapter(List<Item> items){
+        public ItemAdapter(List<Item> items) {
             this.items = items;
         }
 
@@ -116,5 +155,4 @@ public class ItemListFragment extends Fragment {
             return items.size();
         }
     }
-
 }
