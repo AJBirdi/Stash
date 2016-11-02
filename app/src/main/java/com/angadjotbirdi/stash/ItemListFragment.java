@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 /**
@@ -63,10 +64,9 @@ public class ItemListFragment extends Fragment {
         switch (menuItem.getItemId()) {
             case R.id.menu_item_new_item:
                 Item item = new Item();
-                ItemLab.get(getActivity()).addItem(item);
-                Intent intent = ItemActivity.newIntent(getActivity(), item.getId());
+                //ItemLab.get(getActivity()).addItem(item);
+                Intent intent = ItemActivity.newIntent(getActivity(), item.getName());
                 startActivity(intent);
-                Log.d(TAG, item.getName() + " " + item.getPrice());
                 return true;
             default:
                 return super.onOptionsItemSelected(menuItem);
@@ -77,11 +77,30 @@ public class ItemListFragment extends Fragment {
         ItemLab itemLab = ItemLab.get(getActivity());
         List<Item> items = itemLab.getItems();
 
+        if(itemLab != null && items != null){
+            List<Item> tempList;
+
+            tempList = ItemLab.get(getActivity()).getItems();
+
+            for(int x = 0; x < items.size(); x++){
+                Item tempItem = items.get(x);
+                if(tempItem != null){
+                    Log.d(TAG, tempItem.getName());
+                    Log.d(TAG, tempItem.getPrice() + "");
+                }
+                else{
+
+                }
+            }
+        }
+
+
         if (itemAdapter == null) {
             itemAdapter = new ItemAdapter(items);
             itemRecyclerView.setAdapter(itemAdapter);
         } else {
             itemAdapter.notifyDataSetChanged();
+            itemAdapter.setItems(items);
         }
 
     }
@@ -96,8 +115,10 @@ public class ItemListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Intent intent = ItemActivity.newIntent(getActivity(), item.getId());
-            startActivity(intent);
+            if(item != null){
+                Intent intent = ItemActivity.newIntent(getActivity(), item.getName());
+                startActivity(intent);
+            }
         }
 
         @Override
@@ -107,7 +128,6 @@ public class ItemListFragment extends Fragment {
 
             return true;
         }
-
 
         public void bindItem(Item item) {
             this.item = item;
@@ -147,7 +167,14 @@ public class ItemListFragment extends Fragment {
         @Override
         public void onBindViewHolder(ItemHolder holder, int position) {
             Item item = items.get(position);
-            holder.bindItem(item);
+
+            if(item != null){
+                holder.bindItem(item);
+            }
+        }
+
+        public void setItems(List<Item> items){
+            this.items = items;
         }
 
         @Override

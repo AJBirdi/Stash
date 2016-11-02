@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.List;
+
 /**
  * Created by root on 10/24/16.
  */
@@ -19,7 +21,7 @@ import android.widget.EditText;
 
 public class ItemFragment extends Fragment {
 
-    private static final String ARG_ITEM_ID = "item_id";
+    private static final String ARG_ITEM_NAME = "item_id";
     private static final String TAG = "ItemFragment";
 
     private Item item;
@@ -28,8 +30,6 @@ public class ItemFragment extends Fragment {
     private EditText priceTextField;
     private Button saveButton;
 
-    private String tempName;
-    private String tempPrice;
     private String nameText;
     private String priceText;
 
@@ -37,22 +37,33 @@ public class ItemFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        int itemID = (int) getArguments().getSerializable(ARG_ITEM_ID);
-        item = ItemLab.get(getActivity()).getItem(itemID);
+        String itemName = (String) getArguments().getSerializable(ARG_ITEM_NAME);
+
+        if(item != null){
+            item = ItemLab.get(getActivity()).getItem(itemName);
+        }
+        else{
+            item = new Item();
+            item.setName("");
+            item.setPrice(0);
+        }
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        ItemLab.get(getActivity()).updateItem(item  );
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_item, container, false);
 
-        //tempName = item.getName();
-        //tempPrice = item.getPrice() + "";
-
         if(item == null){
             item = new Item();
             nameText = "";
             priceText = "";
-            Log.d(TAG, "IT worked!");
         }
         else if(item != null){
             nameText = item.getName();
@@ -74,11 +85,16 @@ public class ItemFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                nameText = s.toString();
             }
         });
 
         priceTextField = (EditText)v.findViewById(R.id.item_price);
+
+        if(priceText.equals("0")){
+            priceText = "";
+        }
+
         priceTextField.setText(priceText);
         priceTextField.addTextChangedListener(new TextWatcher() {
             @Override
@@ -93,31 +109,37 @@ public class ItemFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                priceText = s.toString();
             }
         });
-
-
 
         saveButton = (Button)v.findViewById(R.id.save_button);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean saveName = false;
+                boolean savePrice = false;
+
                 if (nameText.equals("") || nameText == null){
                     //TODO:Use popup window to reprompt user to enter name and reset fields
                 }
 
                 else{
-                    Log.d(TAG, nameText + " is the name");
                     item.setName(nameText);
+                     saveName= true;
                 }
 
                 if(priceText.matches("[0-9]+")){
                     item.setPrice(Integer.parseInt(priceText));
+                    savePrice = true;
                 }
 
                 else{
                     //TODO:Use popup window to reprompt user to enter price and reset fields
+                }
+
+                if(saveName && savePrice && item != null){
+                    ItemLab.get(getActivity()).addItem(item);
                 }
 
                 getActivity().finish();
@@ -127,9 +149,9 @@ public class ItemFragment extends Fragment {
         return v;
     }
 
-    public static ItemFragment newInstance(int itemId){
+    public static ItemFragment newInstance(String itemName){
         Bundle args = new Bundle();
-        args.putSerializable(ARG_ITEM_ID, itemId);
+        args.putSerializable(ARG_ITEM_NAME, itemName);
 
         ItemFragment fragment = new ItemFragment();
         fragment.setArguments(args);

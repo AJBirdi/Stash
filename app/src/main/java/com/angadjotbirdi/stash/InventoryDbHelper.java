@@ -2,14 +2,10 @@ package com.angadjotbirdi.stash;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.ContentObservable;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-import java.math.BigDecimal;
-import java.security.SecureRandom;
 
 public class InventoryDbHelper extends SQLiteOpenHelper{
 

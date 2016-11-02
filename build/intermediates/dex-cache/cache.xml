@@ -39,21 +39,48 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_ea6fc6ed6786af2013a60c7fc0f12063ca3ad36c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
         <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_4a6983e80ab25ef727da6705a9f9362b0d3184b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d6ef7a2a6e76443cbb57a7d64fe83712e1a088f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_e0ecb28f4019ba5fd2024afb8eb308f87f9ed4e2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_61d9960f19bf4e86ea8219f28973705ad094364a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_ea6fc6ed6786af2013a60c7fc0f12063ca3ad36c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -84,24 +111,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d6ef7a2a6e76443cbb57a7d64fe83712e1a088f9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_e0ecb28f4019ba5fd2024afb8eb308f87f9ed4e2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -115,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="6c2e385027ae7ae6746e4682a44c2d64b22cadac">
+        sha1="80d5be4bcaf38ad74966650007e763f606f10c5a">
         <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e3671e3b8e4ace2d13b90a4d1c9fbc536d6238ba/classes.dex" />
     </item>
     <item
@@ -142,17 +151,8 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="2ee264f0fb601c3f5de735ffd3778ae21be91afb">
+        sha1="eb14fb9f0978bb2c8b2b11d772dac0f685c6406c">
         <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e8d02748a69104eeb96a4e373ba820e9e888b444/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/home/aj/AndroidStudioProjects/Stash/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_61d9960f19bf4e86ea8219f28973705ad094364a/classes.dex" />
     </item>
     <item
         is-multidex="true"
